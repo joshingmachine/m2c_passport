@@ -32,10 +32,15 @@ Q. What do I need to NPM install?
 A. Install the following Node Packaged Modules (via 'npm install' in your Express app directory)
    
    passport
+
    passport-twitter
+
    oauth
+
    superagent
+
    superagent-oauth
+   
    express-helpers   (install this one if you're using EJS, it will save you some agony)
    
    That's it for getting THIS application to work. If you are using another third-party that requires
