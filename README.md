@@ -38,9 +38,9 @@ A. Install the following Node Packaged Modules (via <code>npm install</code> in 
    * superagent-oauth
    * express-helpers   (install this one if you're using EJS, it will save you some agony)
    
-   That's it for getting THIS application to work. If you are using another third-party that requires
-   authentication, such as Facebook, Foursquare, LinkedIn, etc., you can swap out 'passport-twitter'
-   for the appropriate third-party (make sure Passport supports it by checking https://npmjs.org/search?q=passport)
+That's it for getting THIS application to work. If you are using another third-party that requires
+authentication, such as Facebook, Foursquare, LinkedIn, etc., you can swap out 'passport-twitter'
+for the appropriate third-party (make sure Passport supports it by checking https://npmjs.org/search?q=passport)
  
 
 ####Q. Why did you choose Twitter to demo this?
