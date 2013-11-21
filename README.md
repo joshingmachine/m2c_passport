@@ -29,7 +29,7 @@ A. Go to https://dev.twitter.com/apps and create a new application. You'll need 
 
 ####Q. What do I need to NPM install?
 
-A. Install the following Node Packaged Modules (via <code>npm install</code> in your Express app directory)
+A. The following modules should install automagically (they're located in the <code>package.json</code> file). However, if for whatever reason you need to install the following Node Packaged Modules manually, use <code>npm install</code> for each of these NPMs:
    
    * passport
    * passport-twitter
