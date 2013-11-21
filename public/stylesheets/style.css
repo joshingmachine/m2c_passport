@@ -1,8 +1,21 @@
 body {
+  height: 100%;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.contentColumn {
+	border-radius:1em;
+	background-color: #BFEFFF;
+	padding: 1em;
+	margin-right: 1em;
+}
+
+.tweet {
+	padding: 1em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	border-radius:1em;
+	background-color: #4099FF;
+	color: white;
 }

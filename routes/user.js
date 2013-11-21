@@ -1,7 +1,9 @@
 
 /*
- * GET users listing.
+ * User Routes.
  */
+
+
 
 exports.list = function(req, res){
   res.send("respond with a resource");

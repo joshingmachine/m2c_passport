@@ -2,10 +2,81 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap is used for simplicity's sake -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link href="stylesheets/style.css" rel="stylesheet" media="screen">
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="wrap">
+	    <div class="col-md-4 text-center contentColumn">
+	    	<div class="wrapper">
+
+	    		<!-- if statement, used to determine if the user has connected his or her Twitter account to the user object -->
+			    <% if (user.twitter.profile == undefined) { %>
+
+			    	<!-- display if the user has no Twitter profile (they will have one if Twitter is connected) -->
+					<a href="/auth/twitter" class="btn btn-default" >Connect to Twitter</a>
+
+				<% } else { %>
+
+					<!-- display a sampling of the user's Twitter profile info -->
+					<!-- addressing the user by name, given via Twitter -->
+					<p>Hello, <%= user.twitter.profile.displayName %>!</p>
+
+					<!-- using EJS helper tags to display profile image from Twitter -->
+					<%- img_tag(user.twitter.profile.photos[0].value) %>
+
+					<!-- display Twitter username, make it a link to the user's Twitter page with EJS helper tag -->
+					<p><b>Username:</b> <%- link_to('@'+user.twitter.profile.username, 'https://twitter.com/'+user.twitter.profile.username) %><br>
+						
+						<!-- display number of Twitter followers -->
+						<b>Followers:</b> <%= user.twitter.profile._json.followers_count %><br>
+
+						<!-- display number of followers the user has on Twitter -->
+						<b>Following:</b> <%= user.twitter.profile._json.friends_count %></p>
+
+					<!-- disconnect from Twitter button (destroys all Twitter records) -->
+					<a href="/disconnect/twitter" class="btn btn-default">Disconnect from Twitter</a>
+
+				<% } %>
+			</div>
+		</div>
+
+		<div class="col-md-4 text-center contentColumn">
+
+			<!-- button launches '/tweet' route, which calls a function on server-side -->
+			<a href="/tweet" class="btn btn-default" >Get Your Latest Tweet</a>
+
+			<!-- if the user has a tweet, display the latest one -->
+			<% if (user.twitter.last_tweet != undefined) { %>
+				
+				<!-- div created for style purposes (see style.css) -->
+				<div class="tweet">
+
+					   <!-- display when the tweet was tweeted -->
+					   <b>Created At:</b> <%= user.twitter.last_tweet.created_at %><br><br>
+
+					   <!-- display the text of the tweet -->
+					   <b>Tweet:</b><br>
+					   <%= user.twitter.last_tweet.text %><br><br>
+
+					   <!-- display the number of times this tweet has been retweeted -->
+					   <b>Retweets:</b> <%= user.twitter.last_tweet.retweet_count %><br>
+
+					   <!-- display the number of times this tweet has been favorited --> 
+					   <b>Favorites:</b> <%= user.twitter.last_tweet.favorite_count %>
+				</div>
+
+			<!-- if the user is not connected to Twitter and presses the button, nothing will happen -->
+			<% } else if (user.twitter.profile == undefined) { %>
+				<br><br><p>Please connect with Twitter first, or else <br>nothing will happen when you click this button.</p>
+			<% } %>
+
+		</div>
+	</div>
   </body>
 </html>
