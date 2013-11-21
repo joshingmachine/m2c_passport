@@ -73,7 +73,7 @@ A. No, unfortunately. Each one seems to have it's own quirks. For example, with 
 A. I'm the first to admit that I'm not tech-savvy, and a lot of what I know about Passport and developing for
    third parties has come from copy and pasting, Stack Overflow, and banging my head against my desk. While the
    code should work — given that the developer creates a valid application with Twitter and sets the appropriate
-   key values in app.js — some of my code may be incredibly inefficient or pitiful, or my comments may be innacurate.
+   key values in app.js — some of my code may be incredibly inefficient or pitiful, or my comments may be inaccurate.
 
 
 ####Q. I don't get it. I... I just don't get it... [SOBS]

@@ -29,8 +29,8 @@ var server = require('http').createServer(app);
 // and follow the directions. when the application is set up, go
 // to the details page and copy the consumer key and consumer secret
 // and paste them below
-var TWITTER_CONSUMER_KEY = "The consumer key is exclusive to this application";
-var TWITTER_CONSUMER_SECRET = "So it the consumer secret, but this one is... secret... shh!";
+var TWITTER_CONSUMER_KEY = "0qn3Ca66QIWVv9JH4MT84A";
+var TWITTER_CONSUMER_SECRET = "UlW2CnKmmdUCheLe9dduLftxLx2U4zfCHtTntm3ls";
 
 
 
@@ -137,6 +137,8 @@ passport.use(new TwitterStrategy({
 
     // you will want to save each of these to the user,
     // most likely in the DB in your case
+
+    console.log(profile);
 
     user.twitter.profile = profile;
     user.twitter.token = token;
