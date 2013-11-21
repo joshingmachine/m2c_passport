@@ -21,9 +21,14 @@ var server = require('http').createServer(app);
 
 
 // your special consumer key and consumer secret for your app
-// to get these, go create an app at https://dev.twitter.com/apps
-// and follow the directions, then save the variables as strings
-// of the keys
+
+// NOTE: THE APPLICATION WILL NOT WORK UNTIL YOU REPLACE THESE WITH
+// THE ACTUAL KEYS SPECIFIC TO YOUR REGISTERED TWITTER APP
+
+// to get those, go create an app at https://dev.twitter.com/apps
+// and follow the directions. when the application is set up, go
+// to the details page and copy the consumer key and consumer secret
+// and paste them below
 var TWITTER_CONSUMER_KEY = "The consumer key is exclusive to this application";
 var TWITTER_CONSUMER_SECRET = "So it the consumer secret, but this one is... secret... shh!";
 
@@ -176,7 +181,7 @@ function getLastTweet(){
   // Node, IMO) and limits the number of tweets returned to 1, respectively
 	superagent.get('https://api.twitter.com/1.1/statuses/user_timeline.json?count=1')
 
-    // this is where we use the OAuth object from lines 149-167
+    // this is where we use the OAuth object from above
     // and the token and tokenSecret we stored earlier
 		.sign(oauth, user.twitter.token, user.twitter.tokenSecret)
 
@@ -219,8 +224,8 @@ app.get('/disconnect/twitter', function(req, res) { user.twitter = new Object();
 
 
 // this route calls the function getLastTweet(), which does
-// pretty much that (see lines 146-191), then redirects the user
-// to the index page again
+// pretty much that, then redirects the user to the index 
+// page again
 app.get('/tweet', function(req, res){ getLastTweet(); res.redirect('/'); });
 
 
