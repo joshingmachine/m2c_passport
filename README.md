@@ -65,7 +65,8 @@ A. A common reason for this is that it's running into a cross-site request forge
 
 A. No, unfortunately. Each one seems to have it's own quirks. For example, with Foursquare you have to
    pass the tokens through the URL. Generally, though, the basic structure is the same across third parties
-   that use Passport.
+   that use Passport. Refer to your third party's API for the documentation on how to authenticate and make
+   requests.
 
 
 ####Q. Why is that thing in your comments/code wrong?
@@ -131,6 +132,18 @@ A. That's okay, I was there too. I still am, in many ways. But if you need help,
 * https://npmjs.org/package/passport-google
 * https://github.com/jaredhanson/passport-google
 * https://github.com/jaredhanson/passport-google/tree/master/examples/signon
+
+####SoundCloud
+* http://developers.soundcloud.com/
+* https://npmjs.org/package/passport-soundcloud
+* https://github.com/jaredhanson/passport-soundcloud
+* https://github.com/jaredhanson/passport-soundcloud/tree/master/examples/login
+
+####Dropbox
+* https://www.dropbox.com/developers
+* https://npmjs.org/package/passport-dropbox
+* https://github.com/jaredhanson/passport-dropbox
+* https://github.com/jaredhanson/passport-dropbox/tree/master/examples/login
 
 ####General Help
 * http://stackoverflow.com/
